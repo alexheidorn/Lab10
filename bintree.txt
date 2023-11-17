@@ -8,4 +8,4 @@ I 60
 I 65
 I 90
 I 95
-PF T
+PF T Q
