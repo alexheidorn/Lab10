@@ -8,4 +8,12 @@ I 60
 I 65
 I 90
 I 95
-PF T Q
+T
+PF
+
+IN  
+PRE POST
+
+
+
+Q
