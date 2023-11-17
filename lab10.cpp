@@ -8,6 +8,7 @@
 #include <iostream>
 #include <fstream>
 #include "BinaryTree.cpp"
+#include <vector>
 
 using namespace std;
 
@@ -17,7 +18,19 @@ using namespace std;
 */
 void between(int low, int high){
     vector<int> between;
+    // ends search early if provided values are incorrect
+    if (low > high) {
+        cout << "Low value is greater than high value. Search is impossible.\n";
+        return;
+    }
+
     
+    // prints values
+    cout << "Values between " << low << " and " << high << ":\n";
+    for (auto itr : between) {
+        cout << itr << " ";
+    }
+    cout << endl;
 }
 
 void traverse(BinaryNode *n, ostream &out) {
@@ -35,17 +48,16 @@ void processCommands(bool fromFile, istream& inS) {
     do {
         int value;
         int value2; //for between command
-        if (!fromFile) cout << "Commands: I)nsert, R)emove, F)ind, B) find all values between 2 values,\n     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: ";
+        if (!fromFile) cout << "Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,\n     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: ";
         inS >> option;
         // option for between command
         if (option.compare("B") == 0) {
-            if (!fromFile)
-                cout << "Low value:\n";
+            cout << "Low value:\n";
             inS >> value;
-            if (!fromFile)
-                cout << "High value:\n";
+            cout << "High value:\n";
             inS >> value2;
-            if (fromFile) cout << "Searching between"
+            cout << "Searching between " << value << " and " << value2;
+            between(value, value2);
         }
         if (option.compare("I") == 0) {
             if (!fromFile) cout << "Insert value: ";
