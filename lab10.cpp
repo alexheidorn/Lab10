@@ -15,14 +15,9 @@ using namespace std;
 * stores all values between the low&high # in the tree in that vector. 
 * Prints all values in that vector in ascening order.
 */
-void between(){
-    int low;
-    int high;
+void between(int low, int high){
     vector<int> between;
-    cout << "Low value:\n";
-    cin >> low;
-    cout << "High value:\n";
-    cin >> high;
+    
 }
 
 void traverse(BinaryNode *n, ostream &out) {
@@ -39,11 +34,18 @@ void processCommands(bool fromFile, istream& inS) {
     string option;
     do {
         int value;
-        if (!fromFile) cout << "Commands: I)nsert, R)emove, F)ind, B) find all between 2 values,\n     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: ";
+        int value2; //for between command
+        if (!fromFile) cout << "Commands: I)nsert, R)emove, F)ind, B) find all values between 2 values,\n     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: ";
         inS >> option;
-        // option for high/low command
+        // option for between command
         if (option.compare("B") == 0) {
-            if (!fromFile cout << )
+            if (!fromFile)
+                cout << "Low value:\n";
+            inS >> value;
+            if (!fromFile)
+                cout << "High value:\n";
+            inS >> value2;
+            if (fromFile) cout << "Searching between"
         }
         if (option.compare("I") == 0) {
             if (!fromFile) cout << "Insert value: ";
