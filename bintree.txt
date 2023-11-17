@@ -5,14 +5,11 @@ I 15
 I 30
 I 80
 I 60
-I 65
+I 70
 I 90
 I 95
-T
-PF
 
-IN  
-PRE POST
+IN
 
 
 
