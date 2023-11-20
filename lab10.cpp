@@ -12,11 +12,35 @@
 
 using namespace std;
 
+//actually the code that does the search
+//separate fxn so it can be called recursively
+void findBetween(BinaryNode *n, int low, int high, vector<int>& between){
+    if (n == nullptr) {
+        return;
+    }
+
+    //if value < low, skip
+    // if value > high, skip
+    // else vector.push(value), check next value
+
+    if (cmp == 0) {
+        return curr;
+    }
+    else {
+        if (cmp < 0) {
+            return doFind(d,curr->getLeft());
+        }
+        else {
+            return doFind(d,curr->getRight());
+        }
+    }
+}
+
 /* gets a low value & a high value from the user. 
 * stores all values between the low&high # in the tree in that vector. 
 * Prints all values in that vector in ascening order.
 */
-void between(int low, int high){
+void between(BinaryTree t, int low, int high){
     vector<int> between;
     // ends search early if provided values are incorrect
     if (low > high) {
@@ -24,8 +48,12 @@ void between(int low, int high){
         return;
     }
 
-    
-    // prints values
+    // search fails if there is no root
+    if (t.getRoot() == nullptr){ cout << "There is no tree. Can't search."; }
+    //write a new find that ends early
+    findBetween(t.getRoot(), low, high, between);
+
+    // prints values from vector
     cout << "Values between " << low << " and " << high << ":\n";
     for (auto itr : between) {
         cout << itr << " ";
@@ -57,7 +85,7 @@ void processCommands(bool fromFile, istream& inS) {
             cout << "High value:\n";
             inS >> value2;
             cout << "Searching between " << value << " and " << value2;
-            between(value, value2);
+            between(tree, value, value2);
         }
         if (option.compare("I") == 0) {
             if (!fromFile) cout << "Insert value: ";
