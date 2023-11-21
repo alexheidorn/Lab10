@@ -18,22 +18,23 @@ void findBetween(BinaryNode *n, int low, int high, vector<int>& between){
     if (n == nullptr) {
         return;
     }
-
     //if value < low, skip
+    if (n->getLeft()->getData() < low){
+        return;
+    }
+    //search left branches for values
+    findBetween(n->getLeft(), low, high, between);
+    // in order notation, adding values to vector
+    between.push_back(n->getData());
+    
     // if value > high, skip
-    // else vector.push(value), check next value
+    if (n->getLeft()->getData() > high){
+        return;
+    }
 
-    if (cmp == 0) {
-        return curr;
-    }
-    else {
-        if (cmp < 0) {
-            return doFind(d,curr->getLeft());
-        }
-        else {
-            return doFind(d,curr->getRight());
-        }
-    }
+    // else vector.push(value), check next value
+    //search right branches for values
+    findBetween(n->getRight(), low, high, between);
 }
 
 /* gets a low value & a high value from the user. 
@@ -80,11 +81,11 @@ void processCommands(bool fromFile, istream& inS) {
         inS >> option;
         // option for between command
         if (option.compare("B") == 0) {
-            cout << "Low value:\n";
+            if (!fromFile) { cout << "Low value:\n"; }
             inS >> value;
-            cout << "High value:\n";
+            if (!fromFile) { cout << "High value:\n"; }
             inS >> value2;
-            cout << "Searching between " << value << " and " << value2;
+            cout << "Searching between " << value << " and " << value2 << endl;
             between(tree, value, value2);
         }
         if (option.compare("I") == 0) {
