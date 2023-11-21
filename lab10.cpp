@@ -18,23 +18,25 @@ void findBetween(BinaryNode *n, int low, int high, vector<int>& between){
     if (n == nullptr) {
         return;
     }
-    //if value < low, skip
-    if (n->getLeft()->getData() < low){
-        return;
-    }
-    //search left branches for values
-    findBetween(n->getLeft(), low, high, between);
-    // in order notation, adding values to vector
-    between.push_back(n->getData());
-    
-    // if value > high, skip
-    if (n->getLeft()->getData() > high){
-        return;
+    // search left branches for values, only if current value is greater than low
+    // if value < low, skip everything to the left
+    if (n->getData() > low) { 
+        findBetween(n->getLeft(), low, high, between);
     }
 
-    // else vector.push(value), check next value
-    //search right branches for values
-    findBetween(n->getRight(), low, high, between);
+    // in order notation, adding values to vector, only if they are in the range
+    if ((n->getData() > low) && (n->getData() < high)) {
+        /*debuging code
+            cout << "Adding " << n->getData() << " to vector.\n";
+        */
+        between.push_back(n->getData());
+    }
+    
+    // if value > high, skip
+    if (n->getData() < high){
+        //search right branches for values
+        findBetween(n->getRight(), low, high, between);
+    }    
 }
 
 /* gets a low value & a high value from the user. 
