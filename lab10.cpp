@@ -5,6 +5,23 @@
 *  
 */
 /* Input (from .txt file)
+I 50
+I 25
+I 10
+I 15
+I 30
+I 80
+I 60
+I 70
+I 90
+I 95
+
+IN
+
+B 35 75
+
+
+Q
 */
 /* Output:
 Read from file (Y/N)? Y
@@ -45,6 +62,205 @@ Searching between 35 and 75
 Values between 35 and 75:
 50 60 70
 */
+/* Output 2 (no file)
+Read from file (Y/N)? j
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: B
+Low value:
+4
+High value:
+4
+Low value is not less than high value. Search is impossible.
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: B
+Low value:
+72
+High value:
+2
+Low value is not less than high value. Search is impossible.
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I
+Insert value: 50
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 72
+Insert value: Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 4
+Insert value: Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 2
+Insert value: curr is 4
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 2
+Insert value: curr is 4
+curr is 2
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 35
+Insert value: curr is 4
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 27
+Insert value: curr is 4
+curr is 35
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 69
+Insert value: curr is 72
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 420
+Insert value: curr is 72
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 12
+Insert value: curr is 4
+curr is 35
+curr is 27
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 96
+Insert value: curr is 72
+curr is 420
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 4
+Insert value: curr is 4
+curr is 2
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 27
+Insert value: curr is 4
+curr is 35
+curr is 27
+curr is 12
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 32
+Insert value: curr is 4
+curr is 35
+curr is 27
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 64
+Insert value: curr is 72
+curr is 69
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 97
+Insert value: curr is 72
+curr is 420
+curr is 96
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 83
+Insert value: curr is 72
+curr is 420
+curr is 96
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 37
+Insert value: curr is 4
+curr is 35
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I
+Insert value: 72
+curr is 72
+curr is 69
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 82
+Insert value: curr is 72
+curr is 420
+curr is 96
+curr is 83
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 74
+Insert value: curr is 72
+curr is 420
+curr is 96
+curr is 83
+curr is 82
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 37
+Insert value: curr is 4
+curr is 35
+curr is 37
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: IN
+      420
+            97
+         96
+            83
+               82
+                  74
+   72
+         72
+      69
+         64
+ 50
+         37
+            37
+      35
+            32
+         27
+               27
+            12
+   4
+         4
+      2
+         2
+
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 96
+Insert value: curr is 72
+curr is 420
+curr is 96
+curr is 83
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: IN
+      420
+            97
+         96
+               96
+            83
+               82
+                  74
+   72
+         72
+      69
+         64
+ 50
+         37
+            37
+      35
+            32
+         27
+               27
+            12
+   4
+         4
+      2
+         2
+
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: I 96
+Insert value: curr is 72
+curr is 420
+curr is 96
+curr is 83
+curr is 96
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: B
+Low value:
+4
+High value:
+97
+Searching between 4 and 97
+Values between 4 and 97:
+12 27 27 32 35 37 37 50 64 69 72 72 74 82 83 96 96 96
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: B 37 50
+Low value:
+High value:
+Searching between 37 and 50
+No values found between 37 and 50
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: B 36 50 
+Low value:
+High value:
+Searching between 36 and 50
+Values between 36 and 50:
+37 37
+Commands: I)nsert, R)emove, F)ind, B)find all values Between 2 values,
+     PF)rintflat, printIN)order, printPRE)order printPOST)order T)raverse Q)uit: Q
+PS C:\Users\alexh\CS2> 
+*/
+
 #include <iostream>
 #include <fstream>
 #include "BinaryTree.cpp"
@@ -85,26 +301,26 @@ void findBetween(BinaryNode *n, int low, int high, vector<int>& between){
 void between(BinaryTree t, int low, int high){
     vector<int> between;
     // ends search early if provided values are incorrect
-    if (low > high) {
-        cout << "Low value is greater than high value. Search is impossible.\n";
+    if (!(low < high)) {
+        cout << "Low value is not less than high value. Search is impossible.\n";
         return;
     }
-    
-// search fails if there is no root
-    if (t.getRoot() == nullptr) { 
-        cout << "There is no tree. Can't search."; 
-    }    
     cout << "Searching between " << low << " and " << high << endl;
 
     //write a new find that ends early
     findBetween(t.getRoot(), low, high, between);
 
     // prints values from vector, if any
-    cout << "Values between " << low << " and " << high << ":\n";
-    for (auto itr : between) {
-        cout << itr << " ";
+    if (between.empty()){
+        cout << "No values found between " << low << " and " << high << endl;
     }
-    cout << endl;
+    else {
+        cout << "Values between " << low << " and " << high << ":\n";
+        for (auto itr : between) {
+            cout << itr << " ";
+        }
+        cout << endl;
+    }
 }
 
 void traverse(BinaryNode *n, ostream &out) {
