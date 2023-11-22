@@ -4,7 +4,47 @@
 * CS2 Lab 10
 *  
 */
+/* Input (from .txt file)
+*/
+/* Output:
+Read from file (Y/N)? Y
+Filename: bintree.txt
+Inserting 50
+Inserting 25
+Inserting 10
+curr is 25
+Inserting 15
+curr is 25
+curr is 10
+Inserting 30
+curr is 25
+Inserting 80
+Inserting 60
+curr is 80
+Inserting 70
+curr is 80
+curr is 60
+Inserting 90
+curr is 80
+Inserting 95
+curr is 80
+curr is 90
+Print In Order:
+         95
+      90
+   80
+         70
+      60
+ 50
+      30
+   25
+         15
+      10
 
+Searching between 35 and 75
+Values between 35 and 75:
+50 60 70
+*/
 #include <iostream>
 #include <fstream>
 #include "BinaryTree.cpp"
@@ -23,7 +63,6 @@ void findBetween(BinaryNode *n, int low, int high, vector<int>& between){
     if (n->getData() > low) { 
         findBetween(n->getLeft(), low, high, between);
     }
-
     // in order notation, adding values to vector, only if they are in the range
     if ((n->getData() > low) && (n->getData() < high)) {
         /*debuging code
@@ -41,7 +80,7 @@ void findBetween(BinaryNode *n, int low, int high, vector<int>& between){
 
 /* gets a low value & a high value from the user. 
 * stores all values between the low&high # in the tree in that vector. 
-* Prints all values in that vector in ascening order.
+* Prints all values in that vector in ascending order.
 */
 void between(BinaryTree t, int low, int high){
     vector<int> between;
@@ -50,13 +89,17 @@ void between(BinaryTree t, int low, int high){
         cout << "Low value is greater than high value. Search is impossible.\n";
         return;
     }
+    
+// search fails if there is no root
+    if (t.getRoot() == nullptr) { 
+        cout << "There is no tree. Can't search."; 
+    }    
+    cout << "Searching between " << low << " and " << high << endl;
 
-    // search fails if there is no root
-    if (t.getRoot() == nullptr){ cout << "There is no tree. Can't search."; }
     //write a new find that ends early
     findBetween(t.getRoot(), low, high, between);
 
-    // prints values from vector
+    // prints values from vector, if any
     cout << "Values between " << low << " and " << high << ":\n";
     for (auto itr : between) {
         cout << itr << " ";
@@ -87,10 +130,9 @@ void processCommands(bool fromFile, istream& inS) {
             inS >> value;
             if (!fromFile) { cout << "High value:\n"; }
             inS >> value2;
-            cout << "Searching between " << value << " and " << value2 << endl;
             between(tree, value, value2);
         }
-        if (option.compare("I") == 0) {
+        else if (option.compare("I") == 0) {
             if (!fromFile) cout << "Insert value: ";
             inS >> value;
             if (fromFile) cout << "Inserting " << value << endl;
